@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Irish Grover', cursive;
+        }
+        .frst{
+            width: 100%;
+            height: calc(100vh - 50px);
+        }
+
+        .frst img{
+            width: inherit;
+            height: inherit;
+        }
+
+        .frst h1{
+            font-size: 80px;
+            position: absolute;
+            top: 220px;
+            left: 100px;
+            z-index: 1;
+            color: aquamarine;
+            -webkit-text-stroke: 1px black;
+        }
+
+        .second{
+            background: rgb(240, 240, 240);
+            padding: 50px;
+            height: 500px;
+            width: 100%;
+
+        }
+
+        .third{
+            width: 100%;
+            padding: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            background: linear-gradient(40deg, gray, white, gray);
+        }
+
+
+        
+        .me{
+            width: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s;
+        }
+
+        .k{
+            width: 200px;
+            height: 200px;
+        }
+
+
+
+        .third div:hover{
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        .fourt{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            gap: 20px;
+        }
+
+        .container{
+            width: 300px;
+            height: 500px;
+            box-shadow: 0 0 10px black;
+            border-radius: 10px;
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            transition: 300ms;
+        }
+
+        .container img{
+            border-radius: 50%;
+            border: 2px solid black;
+            width: 90px;
+            height: 90px;
+        }
+
+        .container:hover{
+            transform: scale(1.05);
+            box-shadow: 0 0 20px green;
+        }
+
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="frst">
+        <h1>PROPERTY RENTAL<br>SYSTEM</h1>
+
+        <img src="images/index/background room.jpg" alt="no image">
+    </div>
+    <div class="second">
+        <h1>Hello!! Welcome</h1>
+        <p>This is Property Rental System</p>
+        <br><br>
+        <p>Where you can pay to your landlords without an hassle and you can browse available renting place</p>
+    </div>
+
+    <div class="third" id="ok">
+        <div class="me">
+            <img src="images/random/pic1.webp" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/pic2.jpg" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/pic3.jpeg" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/pic4.jpeg" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/room1.webp" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random//room2.jpg" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/pic4.webp" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/room1.webp" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/room2.jpg" alt="" height="300px">
+        </div>
+        <div class="me">
+            <img src="images/random/pic1.webp" alt="" height="300px">
+        </div>
+        
+        
+    </div>
+    <div class="fourt">
+        <div class="container">
+
+            <h4>hahsdf</h4>
+            <br>
+            <img src="" alt="empty">
+            <br>
+            <h3>name</h3>
+            <br><br><br>
+            <div>ratings</div>
+        </div>
+
+        <div class="container">
+
+            <h4>hahsdf</h4>
+            <br>
+            <img src="" alt="empty">
+            <br>
+            <h3>name</h3>
+            <br><br><br>
+            <div>ratings</div>
+        </div>
+    </div>
+
+    <!--see1-->
+    <div class="unsee1" id="side">
+        <div class="profile" onclick="toleft()">
+            <img src="" alt="noo">
+        </div>
+        
+        <!--see2-->
+        <div class="unsee2" id="side2">
+            <h1>name</h1>
+            <button><a href="tenant.html">Home</a></button>
+            <button><a href="profile.html">Profile</a></button>
+            <button><a href="rented.html">Rented</a></button>
+            <button><a href="ras.html">Rents and Spaces</a></button>
+            <button><a href="#">AboutUs</a></button>
+            <button><a href="#">Issues</a></button>
+            <button><a href="#">messages</a></button>
+
+            
+
+
+            <button class="logout"><a href="#">Logout</a></button>
+        </div>
+        
+    </div>
+
+    <script src="sidebar.js"></script>
+    <script>
+
+
+        let c = document.getElementById('ok');
+        c.addEventListener("mouseover", function(){
+            anim();
+        })
+        
+
+        function anim(){
+            let a = document.querySelectorAll(".third>div");
+
+            a.forEach((b, num) => {
+                setTimeout(function(){
+                    b.classList.add("k")
+                },1000 * num)
+            });
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>

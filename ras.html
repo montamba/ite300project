@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rented and spaces</title>
+    <style>
+        .picture{
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border: 2px solid black;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+
+        .picture::before{
+            content: "Renting Place!!";
+            position: absolute;
+            color: transparent;
+            background: linear-gradient(to left, aquamarine, aqua,aquamarine,rgb(0, 255, 132));
+            font-size: 130px;
+            background-clip: text;
+            -webkit-text-stroke: 1px black;
+
+        }
+
+        .picture img{
+            width: inherit;
+            height: max-content;
+        }
+        .filters{
+            padding: 30px;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filters div{
+            display: flex;
+            gap: 5px;
+        }
+
+        .houses{
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            gap: 50px;
+            width: 100%;
+            padding: 50px;
+        }
+
+        .house{
+            background: linear-gradient(80deg,lightblue, aquamarine, aqua);
+            border-radius: 10px;
+            height: 300px;
+            width: 200px;
+            padding: 5px;
+            transition: 300ms;
+            box-shadow: 0 0 10px black;
+        }
+
+        .house:hover{
+            transform: scale(1.03);
+            background: linear-gradient(80deg,aqua, lightblue, aquamarine);
+
+        }
+
+        .house .pcture{
+            background: yellow;
+            position: relative;
+            top: 5px;
+            left:24px;
+            width: 140px;
+            height: 130px;
+            display: grid;
+            place-items: center;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+
+        .house .pcture img{
+            height: inherit;
+            width: max-content;
+        }
+
+        .house .labelsok{
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .noback{
+            display: none;
+            overflow: hidden;
+        }
+
+
+        .back{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .back div{
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+        .images{
+            text-align: center;
+            position: relative;
+        }
+
+        .images .imghold{
+            position: relative;
+            background: yellow;
+            width: 300px;
+            height: 300px;
+            top: 50px;
+            left: 90px;
+            overflow: hidden;
+
+        }
+
+        .imghold img{
+            height: inherit;
+            width: max-content;
+
+        }
+        .images h2{
+            position: relative;
+            top: 60px;
+        }
+
+        .information{
+            position: relative;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+        .information .ownername{
+            width: 450px;
+            height: 60px;
+        }.information .spaces{
+            width: 450px;
+            height: 60px;
+        }.information .descrp{
+            width: 450px;
+            height: 150px;
+            overflow: auto;
+        }.information .buttt{
+            position: absolute;
+            bottom: 20px;
+            width: 450px;
+            height: 60px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }.information .type12{
+            width: 450px;
+            height: 60px;
+        }
+        .buttt button{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 50px;
+            width: 200px;
+            border-radius: 30px;
+        }
+
+        #x{
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="picture">
+        <img src="images/index/wel.jpg" alt="">
+    </div>
+    <div class="filters">
+
+        <div>
+            <h2>Type: </h2>
+            <select>
+                <option>Apartment</option>
+                <option>spaces</option>
+                <option>room</option>
+                <option>hatdog</option>
+            </select>
+
+        </div>
+
+        <div>
+            <h2>Vacant: </h2>
+            <select>
+                <option>solo</option>
+                <option>2 to 5</option>
+                <option>5 to 10</option>
+                <option>more than 10</option>
+            </select>
+        </div>  
+    </div>
+
+    <div class="houses">
+        <div class="house" onclick="background(this)">
+            <div class="pcture">
+                <img src="images/random/pic3.jpeg" alt="">
+            </div>
+            <div class="labelsok">
+                <h2 class="housename">Name</h2>
+                <p  class="ownername">owner</p>
+                <p class="housetype">type</p>
+
+                <p class="price">price/month</p>
+
+            </div>
+        </div>
+
+        <div class="house" onclick="background(this)">
+            <div class="pcture">
+                <img src="images/random/pic4.jpeg" alt="">
+            </div>
+            <div class="labelsok">
+                <h2 class="housename">Bamban</h2>
+                <p  class="ownername">Alice</p>
+                <p class="housetype">pogo</p>
+
+                <p class="price">1000/month</p>
+
+            </div>
+        </div>
+
+       
+    </div>
+
+
+
+
+    <div class="noback" id="back">
+        <div class="images">
+
+            <div class="imghold">
+                <img src="" alt="no image uplaods" id="backimg">
+            </div>
+            
+            <h2 id="backname">House name</h2>
+
+            <button id="x" onclick="esit()">X</button>
+        </div>
+        <div class="information">
+            <div class="ownername">
+                <h3 id="backowner">Owner name</h3>
+            </div>
+            <div class="spaces">
+                <h3 id="housespace"> house space</h3>
+            </div>
+
+            <div class="type12">
+                <p id="backtype">type</p>
+            </div>
+
+            <div class="descrp">
+                <p id="backdes">Description</p>
+            </div>
+
+            <div class="buttt">
+                <button class="save" id="backprice">pricepermonth</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="unsee1" id="side">
+        <div class="profile" onclick="toleft()">
+            <img src="" alt="noo">
+        </div>
+        
+        <!--see2-->
+        <div class="unsee2" id="side2">
+            <h1>name</h1>
+            <button><a href="tenant.html">Home</a></button>
+            <button><a href="profile.html">Profile</a></button>
+            <button><a href="rented.html">Rented</a></button>
+            <button><a href="ras.html">Rents and Spaces</a></button>
+            <button><a href="#">AboutUs</a></button>
+            <button><a href="#">Issues</a></button>
+            <button><a href="#">messages</a></button>
+
+            
+
+
+            <button class="logout"><a href="#">Logout</a></button>
+        </div>
+        
+    </div>
+
+
+
+    <script src="sidebar.js"></script>
+    <script src="ras.js"></script>
+    
+    
+</body>
+</html>

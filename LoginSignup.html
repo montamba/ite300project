@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Irish Grover', cursive;
+            padding: 0;
+            margin: 0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background: url("images/background/background\ house.webp") no-repeat;
+            background-size: 100% 100vh;
+            color: #718355;
+           
+        }
+        
+        
+        .h1{
+            position: absolute;
+            top: 130px;
+            right: 380px;
+        }
+        
+
+        .mclass{
+            position: absolute;
+            width: 921px;
+            height: 542px;
+            border: 2px solid black;
+            background: rgba(0, 191, 255, 0.5);
+            overflow: hidden;
+            border-radius: 20px;
+            right: -50px;
+            bottom: 50px;
+            transform: scale(.80);
+
+        }
+
+        .scroller{
+            display: flex;
+            gap: 40px;
+            width: 1736px;
+            transform: translate(40px, 50px);
+            transition: 1s;
+        }
+
+        .scroller2{
+            transform: translate(-850px, 50px);
+
+
+        }
+        
+
+        .login{
+            background: white;
+            width: 843px;
+            height: 422px;
+            border-radius: 10px;
+            padding-top: 10px;
+        }
+
+        .login form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        .locon{
+            width:300px;
+        }
+
+        .login form  .locon input{
+            width: 197px;
+            float: right;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background: transparent;
+        }
+        .login form  .locon input:focus{
+            width: 197px;
+            float: right;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background: transparent;
+        }
+
+        .login input[type="submit"]{
+            width: 163px;
+            height: 53px;
+            background: #B5C99A;
+            border-radius: 10px;
+            transition: 300ms;
+        }
+
+        .login input[type="submit"]:hover{
+            background: #41B5FD;
+        }
+        .signincon{
+            width: 843px;
+            height: 425px;
+            border-radius: 10px;
+            overflow-y: Scroll;
+        }
+
+        .signincon::-webkit-scrollbar{
+            display: none;
+        }
+        .signin{
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+            background:white;
+            width: 843px;
+            height: 759px;
+            position: relative;
+            align-items: center;
+            padding-top: 10px;
+        }
+        .con{
+            position:relative;
+            width:723px;
+            height: 58px;
+        }
+
+        .con input{
+            position: absolute;
+            top: 0px;
+            background: transparent;
+            width: inherit;
+            height: inherit;
+            border-radius: 10px;
+            padding-left: 20px;
+        }
+
+        .con p{
+            position: absolute;
+            top:20px;
+            transition: 300ms;
+            margin-left: 10px;
+        }
+
+        .date{
+            display: none;
+            transition: 300ms;
+        }
+
+        .gender{
+            width: 86%;
+        }
+
+        .con input:focus + p,.con input:valid + p{
+            top: -20px;
+            transform: scale(0.70);
+            background: transparent;
+            display: inherit;
+        }
+
+        .CSbutton{
+            display:flex;
+            position: absolute;
+            gap:90px;
+            bottom: 20px;
+            left: 50%;
+            transform:translateX(-50%);
+        }
+
+        .CSbutton button{
+            
+            width: 192px;
+            height: 53px;
+            border-radius: 10px;
+            background: transparent;
+            transition: 1s;
+        }
+
+        .CSbutton button:hover:first-child{
+            background: red;
+            color:white;
+            
+        }
+
+        .CSbutton button:hover:nth-child(2){
+            background: #41B5FD;
+            color:white;
+            
+        }
+        
+
+        .rth{
+            width: 0px;
+            height: 0;
+            border-bottom: 100vh solid transparent;
+            border-left: 1000px solid rgba(133, 165, 255, 0.5);
+            padding-left: 100px;
+
+        }
+
+        .rth img{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: 100px;
+            top: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="tenant">
+        <h1 class="h1" style="-webkit-text-stroke: black 0.5px;">TENANT</h1>
+        <div class="mclass">
+            <div class="scroller" id="scc">
+                <!--login-->
+                <div class="login">
+                    <form>
+                        <h2>Sign in</h2>
+                        <div class="locon">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" placeholder="email or username" required>
+                        </div>
+                        <div class="locon">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <a href="#">forgot password</a>
+            
+                        <div style="width: 300px;">
+                            <input type="checkbox">
+                            <label for="checkbox" name="checkbox">Remember me</label>
+                        </div>
+            
+                        <input type="submit" value="LOGIN">
+            
+                        <div>
+                            <p style="display:inline;">NO ACCOUNT YET?</p>
+                            <a href="#" onclick="prss()">SIGN UP</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!--Signup-->
+
+                <div class="signincon">
+                    <form class="signin" id="siginform">
+                        <h2>Sign in</h2>
+                        <div class="con">
+                            <input class="inp" type="text" required>
+                            <p>First Name</p>
+                        </div>
+                
+                        <div class="con">
+                            <input class="inp" type="text" required>
+                            <p>Last Name</p>
+                        </div>
+                        <div class="con">
+                            <input class="inp" type="date" required>
+                            <p class="date">date</p>
+                        </div>
+                        <div class="con">
+                            <input class="inp" type="Email" required>
+                            <p>Email</p>
+                        </div>
+                        <div class="gender" style="display: flex; align-items:center; gap:4px;">
+                            <p>Gender</p>
+                            <select style="height: 30px;">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="con">
+                            <input class="inp" type="password" id="password2" required>
+                            <p> Password</p>
+                        </div>
+                        <div class="con" >
+                            <input class="inp" type="password" id="password1" required>
+                            <p>Confirm Password</p>
+                        </div>
+                        <div class="CSbutton">
+                            <button onclick="prss()" type="button" role="button">Cancel</button>
+                            <button onclick="submit()" type="submit">Proceed</button>
+                        </div>      
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="rth">
+        <img src="images/icon/Logo.png" alt="">
+    </div>
+
+    <script>
+        document.getElementById("siginform").addEventListener(
+            "submit", function(event){
+                const pass1 = document.getElementById("password2").value;
+                const pass2 = document.getElementById("password1").value;
+
+                if(pass1 !== pass2){
+                    alert("not match")
+                    event.preventDefault();
+                }
+            }
+        )
+
+        function prss(){
+            let sc = document.getElementById("scc");
+
+            sc.classList.toggle("scroller2");
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Irish Grover', cursive;
+}
+
+.unsee2{
+    display: none;
+}
+
+.unsee1{
+    width: 0;
+    transition:width 500ms;
+}
+
+.profile{
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.profile img{
+    width: inherit;
+    height: max-content;
+}
+
+.see1{
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-right: 2px solid black;
+    
+}
+
+.see1 .profile{
+    position: unset;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.see1 .see2{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.see2 button{
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(40deg, rgb(132, 223, 253), rgb(111, 111, 243));
+    transition: background 500ms;
+}
+
+.see2 button:hover{
+    background: linear-gradient(40deg, rgb(111, 111, 243),rgb(132, 223, 253) );
+
+
+}
+
+.see2 .logout{
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 40px);
+    transition: 300ms;
+}
+
+.see2 .logout:hover{
+    background: red;
+}
+
+.see2 a{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(0, 255, 170);
+}
+
+.see2 h1{
+    color: rgb(0, 255, 170);
+
+}

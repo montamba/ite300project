@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Rented</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+
+        .rented{
+            width: 90%;
+            height: 600px;
+            box-shadow: 0 0 5px black;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            border-radius: 10px;
+            padding: 20px;
+            overflow: auto;
+            gap: 10px;
+        }
+        
+        .title{
+            position: absolute;
+            left: 50%;
+            transform:translateX(-50%);
+            color: aqua;
+            font-size: 50px;
+            -webkit-text-stroke:1px black;
+            text-shadow: 0 0 10px aqua;
+        }
+
+        .rent{
+            border: 1px solid aquamarine;
+            display: flex;
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+            box-shadow: 0 0 5px aqua;
+            overflow: hidden;
+            gap: 10px;
+            transition: 500ms;
+
+        }
+
+        .rent:hover{
+            transform: translateX(-2px);
+            background: linear-gradient(to left, white, rgb(211, 239, 249));
+            
+        }
+
+        .firstcontainer{
+            height: inherit;
+            width: 200px;
+            background: lightblue;
+            overflow: hidden;
+        }
+
+        .firstcontainer img{
+            height: 200px;
+            width: 200px;
+        }
+        .secondcon{
+            flex:1;
+        }
+
+        .secondcon .ratings{
+            width: 100%;
+            height: 20px;
+            margin: 10px 0px;
+        }
+
+        .norent{
+            width: 0;height: 0;
+            transition: 1s;
+        }
+
+        .uncover{
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .norentinfo{
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            transition: 300ms;
+        }
+
+
+
+        .cover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .rentinfo{
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 2px solid black;
+            overflow: auto;
+            background: whitesmoke;
+            box-shadow: 0 0 10px black;
+
+        }
+
+        .rentinfo::-webkit-scrollbar{
+            width: 10px;
+        }
+
+        
+
+        .rentinfo .una{
+            display: flex;
+            justify-content: center;
+            height: 200px;
+            padding: 20px;
+            gap: 5px;
+            
+
+        }
+
+        
+
+        .una .pic{
+            height: 160px;
+            width: 160px;
+            border: 3px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+        }
+
+        .una .pic img{
+            height: inherit;
+            width: max-content;
+            
+        }
+
+        .nfodisplay{
+            flex: 1;
+        }
+
+        .description{
+            padding: 20px;
+            height: 300px;
+        }  
+
+        .description p{
+            text-wrap: wrap;
+            height: calc(300px - 40px);
+            overflow: auto;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+
+        .owner{
+            padding: 20px;
+            height: 100px;
+        }
+
+        .payments{
+            background: lightcyan;
+            display: flex;
+            height: 500px;
+        }
+
+        .payments div{
+            flex: 1;
+        }
+
+        .payrent{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            gap: 3px;
+        }
+
+        .payrent button{
+            height: 50px;
+            border-radius: 10px;
+            background: lightblue;
+            transition: 500ms;
+        }
+
+        .payrent button:hover{
+            transform: translateY(-4px);
+            background: rgb(0, 191, 255);
+
+        }
+
+        .payrent button:last-child:hover{
+            background: red;
+        }
+
+        .payrent a{
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .time{
+            display: flex;
+        }
+
+        .time div{
+            flex: 1;
+            text-align: center;
+        }
+
+        .time .left{
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .time .rigth{
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .noxx{
+            display: none;
+        }
+
+        .xx{
+            position: absolute;
+            top: 60px;
+            left: 250px;
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: red;
+        }
+
+        .xx a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <h1 class="title">Rented</h1>
+    <div class="rented">
+
+        <div class="rent" onclick="cover(this)">
+            <div class="firstcontainer">
+                <img src="images/random/pic2.jpg" alt="no image shown">
+            </div>
+
+            <div class="secondcon">
+                <h1 class="itemname">hatdog</h1>
+                <div class="itemrate" class="ratings">
+
+                </div>
+                <p class="item">Description</p>
+            </div>
+        </div>
+
+        <div class="rent" onclick="cover(this)">
+            <div class="firstcontainer">
+                <img src="" alt="no image shown">
+            </div>
+
+            <div class="secondcon">
+                <h1 class="itemname">Korekong Best Hotel</h1>
+                <div class="itemrate" class="ratings">
+
+                </div>
+                <p class="item">Wala ka bang pera? So sad di para sayo to (>_<)</p>
+            </div>
+        </div>
+
+
+
+        
+
+    </div>
+
+    <div class="uncover" id="cov">
+        <div class="norentinfo" id="rentmodal">
+            <div class="una">
+                <div class="pic">
+                    <img src="" alt="no picture" id="pichere">
+                </div>
+                <div class="nfodisplay">
+                    <h2 id="namehere">House name</h2>
+                    <p id="typehere">House Type</p>
+                    <p id="spacehere">Housing Space</p>
+                </div>
+            </div>
+
+            <div class="description">
+                <p id="deshere">
+                    This is a test
+
+                </p>
+            </div>
+
+            <div class="owner">
+                <h1 id="ownerhere">Owner: name</h1>
+
+            </div>
+
+            <div class="payments">
+                <div class="payrent">
+                    <h2>Pay Rent</h2>
+                    <br><br>
+                    <br><br>
+
+                    <button><a href="#">Advance</a></button>
+                    <button><a href="#">Loan</a></button>
+                    <button><a href="#">End</a></button>
+                </div>
+                <div class="time">
+                    <div class="left">
+                        <p>Start</p>
+
+                    </div>
+                    <div class="rigth">
+                        <p>End</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="noxx" onclick="uncover()" id="xx">
+            <a>X</a>
+        </div>
+    </div>
+
+
+    
+
+    <div class="unsee1" id="side">
+        <div class="profile" onclick="toleft()">
+            <img src="" alt="noo">
+        </div>
+        
+        <!--see2-->
+        <div class="unsee2" id="side2">
+            <h1>name</h1>
+            <button><a href="tenant.html">Home</a></button>
+            <button><a href="profile.html">Profile</a></button>
+            <button><a href="rented.html">Rented</a></button>
+            <button><a href="ras.html">Rents and Spaces</a></button>
+            <button><a href="#">AboutUs</a></button>
+            <button><a href="#">Issues</a></button>
+            <button><a href="#">messages</a></button>
+
+            
+
+
+            <button class="logout"><a href="#">Logout</a></button>
+        </div>
+        
+    </div>
+
+    <script src="sidebar.js"></script>
+
+    <script src="rent.js"></script>
+    
+</body>
+</html>
